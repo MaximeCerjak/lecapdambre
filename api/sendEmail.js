@@ -1,0 +1,42 @@
+// /api/sendEmail.js
+import nodemailer from 'nodemailer';
+
+const sendEmail = async (req, res) => {
+    const { nom, prenom, email, telephone, dateArrivee, dateDepart, heureDepart, nbPersonnes, commentaires } = req.body;
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.USER_EMAIL, // Utilisez les variables d'environnement pour sécuriser vos identifiants
+            pass: process.env.PASSWORD_EMAIL
+        }
+    });
+
+    const mailOptions = {
+        from: process.env.USER_EMAIL, // Votre adresse email authentifiée
+        replyTo: email, // Adresse email de l'utilisateur
+        to: process.env.USER_EMAIL,
+        subject: 'Nouvelle demande de réservation',
+        text: `Détails de la réservation:
+               Nom: ${nom}
+               Prénom: ${prenom}
+               Email: ${email}
+               Téléphone: ${telephone}
+               Date d'arrivée: ${dateArrivee}
+               Date de départ: ${dateDepart}
+               Heure de départ: ${heureDepart}
+               Nombre de personnes: ${nbPersonnes}
+               Commentaires: ${commentaires}`
+      };
+      
+
+    try {
+        await transporter.sendMail(mailOptions);
+        res.status(200).send('Email sent successfully');
+    } catch (error) {
+        console.error('Failed to send email', error);
+        res.status(500).send('Failed to send email');
+    }
+};
+
+export default sendEmail;

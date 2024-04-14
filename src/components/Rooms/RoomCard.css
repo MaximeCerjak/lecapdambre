@@ -1,0 +1,195 @@
+/* RoomCard.css */
+.room-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #feaf4c;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    min-width: 300px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .room-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .room-images {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .room-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .room-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .room-details h2 {
+    margin: 0;
+    color: #232323;
+    font-size: 20px;
+  }
+  
+  .room-details p {
+    margin: 10px 0;
+    color: #3e3e3e;
+    font-size: 16px;
+    display: flex;
+    align-items: center; /* Assure un alignement vertical correct */
+    gap: 5px; /* Ajoute un espace entre les éléments flex */
+  }
+  
+  .room-details p img {
+    margin-right: 5px; /* Réduit la marge à droite de chaque image pour un espacement plus précis */
+    width: 20px;
+    height: 20px;
+  }
+  
+  .room-details p span {
+    margin-left: 5px; /* Ajoute un peu d'espace après les images pour séparer du texte suivant */
+  }
+  
+  .room-prices {
+    display: flex;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    padding: 10px 15px;
+    border-radius: 8px;
+  }
+  
+  .room-prices span {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  /* Assumant que cela s'ajoute à votre fichier CSS déjà existant */
+
+#nosChambres { 
+    padding: 40px 20px;
+    margin: auto;
+    max-width: 1200px;
+    border-radius: 8px;
+  }
+  
+  #nosChambres h2 {
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid antiquewhite;
+  }
+
+  /* Ajout au fichier CSS existant */
+  
+  .toggle-rooms {
+    background-color: #212429;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-rooms:hover {
+    background-color: #212429cc;
+  }
+  
+  .room-display {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .room-container {
+    width: 100%; /* Adjust width as necessary */
+    margin: auto;
+    position: relative;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #212429;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px 15px;
+    z-index: 100;
+  }
+  
+  .prev-button {
+    left: -35px; /* Adjust as necessary */
+  }
+  
+  .next-button {
+    right: -35px; /* Adjust as necessary */
+  }
+  
+  .nav-button:hover {
+    background-color: #212429bc;
+  }
+
+  .rooms-list {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  .price-bs {
+    color: #008000;
+  }
+  
+  .price-ms {
+    color: #ff6a00;
+  }
+  
+  .price-hs {
+    color: #ff0000;
+  }
+  
+  /* Grands écrans: 3 colonnes */
+  @media (min-width: 1024px) {
+    .rooms-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Écrans moyens: 2 colonnes */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .rooms-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Petits écrans: 1 colonne */
+  @media (max-width: 767px) {
+    .rooms-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  

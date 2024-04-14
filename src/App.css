@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #212429ba;
+  color: antiquewhite;
+  padding-top: 90px;
+}

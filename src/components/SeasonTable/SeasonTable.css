@@ -1,0 +1,32 @@
+table {
+  width: 85%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.bs {
+  background-color: #0080004f;
+}
+
+.ms {
+  background-color: #ff6a007a;
+}
+
+.hs {
+  background-color: #ff00004f;
+}
+
+.close {
+  background-color: #a0a0a0;
+}
+
+th {
+  background-color: #212429;
+  color: antiquewhite;
+}

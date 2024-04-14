@@ -1,0 +1,48 @@
+/* Services.css */
+#nosServices {
+    background-color: #feaf4c; /* Couleur de fond légère */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre subtile */
+    max-width: 1000px; /* Largeur maximale pour le centrage */
+    margin: 40px auto; /* Centrage horizontal et espace vertical */
+  }
+  
+  #nosServices h2 {
+    text-align: center; /* Titres centrés */
+    color: #333; /* Couleur du texte */
+    padding: 10px; /* Espacement autour des titres */
+  }
+  
+  .services {
+    display: flex; /* Mise en page en grille flexible */
+    justify-content: space-around; /* Espacement équilibré entre les services */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne en dessous */
+  }
+  
+  .service {
+    display: flex; /* Mise en page flexible pour les éléments de service */
+    flex-direction: column; /* Organisation verticale */
+    align-items: center; /* Centrage horizontal des éléments */
+    width: 90px; /* Largeur de chaque service */
+    padding: 10px; /* Espacement autour de chaque service */
+    transition: transform 0.3s ease; /* Animation fluide pour le survol */
+    border-radius: 5px; /* Bords arrondis */
+  }
+  
+  .service img {
+    width: 32px; /* Taille des icônes */
+    height: 32px; /* Taille uniforme pour les icônes */
+    margin-bottom: 10px; /* Espace entre l'icône et le texte */
+  }
+  
+  .service p {
+    margin: 5px 0; /* Espacement vertical entre les lignes de texte */
+    color: #666; /* Couleur du texte légèrement foncée */
+    text-align: center; /* Centrage du texte */
+  }
+  
+  .service:hover {
+    transform: translateY(-5px); /* Déplacement vers le haut lors du survol */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Ombre plus prononcée lors du survol */
+  }
+  

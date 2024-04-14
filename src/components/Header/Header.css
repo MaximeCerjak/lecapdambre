@@ -1,0 +1,76 @@
+header {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #feaf4c;
+    position: fixed;
+    top: 0;
+    padding: 0.7rem;
+    transition: padding 0.3s ease-in-out;
+    z-index: 1000; /* Assure que l'en-tête reste en haut */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.language {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.7rem;
+    margin-right: 15px;
+}
+
+.btn-l {
+    font-size: 0.6em;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border: none;
+    padding: 0.3rem;
+}
+
+.btn-r {
+    font-size: 0.6em;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+    padding: 0.3rem;
+}
+
+.active {
+    background-color: #212429;
+    color: antiquewhite;
+}
+
+header.small {
+    padding: 0.2rem; /* Réduit le padding quand l'utilisateur scroll */
+}
+
+header > h1 {
+    margin: 0;
+    margin-bottom: 6px;
+    color: antiquewhite;
+    font-size: 2rem; /* Taille initiale */
+    transition: font-size 0.3s ease-in-out;
+}
+
+header.small > h1 {
+    font-size: 1rem; /* Réduit la taille de la police pour le titre */
+}
+
+.navBar {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 6px;
+}
+
+.navBar > a {
+    cursor: pointer;
+    color: antiquewhite;
+}
+
+.navBar > a:hover {
+    color: #212429;
+}
+
