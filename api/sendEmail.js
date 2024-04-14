@@ -7,14 +7,14 @@ const sendEmail = async (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.USER_EMAIL, // Utilisez les variables d'environnement pour sécuriser vos identifiants
+            user: process.env.USER_EMAIL, 
             pass: process.env.PASSWORD_EMAIL
         }
     });
 
     const mailOptions = {
-        from: process.env.USER_EMAIL, // Votre adresse email authentifiée
-        replyTo: email, // Adresse email de l'utilisateur
+        from: process.env.USER_EMAIL, 
+        replyTo: email, 
         to: process.env.USER_EMAIL,
         subject: 'Nouvelle demande de réservation',
         text: `Détails de la réservation:

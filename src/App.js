@@ -25,7 +25,6 @@ function App() {
               <Carousel language={language}/>
               <Introduction language={language}/>
               <NosServices language={language}/>
-              <SeasonTable language={language}/>
               <NosChambres language={language}/>
               <SeasonTable language={language}/>
               <FormulaireReservation language={language}/>
