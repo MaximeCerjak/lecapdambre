@@ -30,7 +30,7 @@ const Reservation = ({language}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/sendEmail', {
+      const response = await fetch('https://lecapdambre.vercel.app/api/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
