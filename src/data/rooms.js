@@ -122,7 +122,7 @@ export const rooms = [
     },
     {
         id: 12,
-        title: "Chambre 12 équipé handicapé",
+        title: "Chambre 12 accès aux personnes en situation de handicap",
         capacity: 4,
         bathroom: "handicap",
         bs_price: 104,
@@ -279,7 +279,7 @@ export const rooms_en = [
     },
     {
         id: 12,
-        title: "Room 12 equipped disabled",
+        title: "Room 12 disabled access",
         capacity: 4,
         bathroom: "handicap",
         bs_price: 104,
