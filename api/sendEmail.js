@@ -33,7 +33,7 @@ const sendEmail = async (req, res) => {
 
     try {
         await transporter.sendMail(mailOptions);
-        res.status(200).send('Email sent successfully');
+        res.status(200).json({ message: 'Email sent successfully' });
     } catch (error) {
         console.error('Failed to send email', error);
         res.status(500).send(`Failed to send email: ${error.message}`);

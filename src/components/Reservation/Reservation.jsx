@@ -37,22 +37,22 @@ const Reservation = ({language}) => {
         },
         body: JSON.stringify(data),
       });
-
+  
       if (response.ok) {
         const result = await response.json();
         console.log('Email sent successfully:', result);
         alert('Votre demande de réservation a été envoyée avec succès !');
       } else {
-        console.error('Failed to send email:', response.status, response.statusText);
-        alert(response);
+        const errorResponse = await response.text(); 
+        console.error('Failed to send email:', response.status, errorResponse);
+        alert(`Erreur lors de l'envoi de l'email: ${errorResponse}`);
       }
       
     } catch (error) {
       console.error('Failed to send email:', error);
-      alert(error);
+      alert(`Erreur lors de l'envoi de l'email: ${error}`);
     }
-  };
-  
+  };  
 
   if(language === "fr") {
     return (
