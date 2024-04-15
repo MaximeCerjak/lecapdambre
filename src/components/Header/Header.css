@@ -6,7 +6,7 @@ header {
     background-color: #feaf4c;
     position: fixed;
     top: 0;
-    padding: 0.7rem;
+    padding-top: 0.7rem;
     transition: padding 0.3s ease-in-out;
     z-index: 1000; /* Assure que l'en-tête reste en haut */
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -74,3 +74,32 @@ header.small > h1 {
     color: #212429;
 }
 
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navBar {
+        width: 100%;
+        flex-wrap: wrap; /* Permet aux éléments de la navBar de revenir à la ligne */
+        justify-content: center; /* Centre les liens quand ils reviennent à la ligne */
+    }
+
+    .navBar > a {
+        flex: 1 1 20%; /* Permet à chaque lien de prendre toute la largeur si nécessaire */
+        margin: 5px; /* Ajoute un peu d'espace entre les liens */
+        text-align: center; /* Centre le texte dans les liens */
+        background-color: antiquewhite;
+        color: #212429;
+        padding: 0.3rem;
+        border-radius: 5px;
+        max-width: 20%;
+    }
+
+    .language {
+        right:20px;
+        top:2px;
+        padding: 0;
+    }
+}

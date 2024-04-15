@@ -57,4 +57,27 @@
   .btn-submit:hover {
     background-color: #45a049;
   }
+
+@media (max-width: 600px) {
+  .resa-container {
+    padding: 10px; /* Reduced padding */
+    margin: 10px auto;
+    min-width: 90%; /* More appropriate for smaller screens */
+    max-width: 95%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"],
+  textarea {
+    width: 90%; /* Full width for smaller screens */
+    padding: 10px; /* Larger padding for easier interaction */
+  }
+
+  .btn-submit {
+    padding: 12px 24px; /* Larger button on smaller screens */
+  }
+}
   

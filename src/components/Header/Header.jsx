@@ -37,7 +37,7 @@ const Header = ({language, setLanguage}) => {
       <nav className='navBar'>
         <Link to="gallery" smooth={true} duration={500}>{language === "fr" ? "Accueil" : "Home"}</Link>
         <Link to="nosServices" smooth={true} duration={500}>Services</Link>
-        <Link to="nosChambres" smooth={true} duration={500}>{language === "fr" ? "Nos Chambres" : "Our rooms"}</Link>
+        <Link to="nosChambres" smooth={true} duration={500}>{language === "fr" ? "Chambres" : "Rooms"}</Link>
         <Link to="formulaireReservation" smooth={true} duration={500}>{language === "fr" ? "Réservation" : "Schedule"}</Link>
         <Link to="contact" smooth={true} duration={500}>Contacts</Link>
       </nav>

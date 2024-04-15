@@ -28,7 +28,7 @@
     height: 100%;
     object-fit: cover;
   }
-  
+
   .room-details {
     padding: 15px;
     display: flex;
@@ -189,6 +189,28 @@
   @media (max-width: 767px) {
     .rooms-list {
       grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 8px 12px; /* Plus petit pour les écrans mobiles */
+      font-size: 16px; /* Taille de la police ajustée pour la lisibilité */
+    }
+  
+    .prev-button {
+      left: 10px; /* Moins de débordement hors de l'écran */
+    }
+  
+    .next-button {
+      right: 10px; /* Moins de débordement hors de l'écran */
+    }
+  
+    .nav-button:hover {
+      background-color: #212429; /* Couleur légèrement modifiée pour le hover */
     }
   }
   
