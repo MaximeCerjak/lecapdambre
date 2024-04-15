@@ -38,10 +38,15 @@ const Reservation = ({language}) => {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) throw new Error('Something went wrong');
-      const result = await response.json();
-      console.log('Email sent successfully:', result);
-      alert('Votre demande de réservation a été envoyée avec succès !');
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Email sent successfully:', result);
+        alert('Votre demande de réservation a été envoyée avec succès !');
+      } else {
+        console.error('Failed to send email:', response.status, response.statusText);
+        alert('Échec de l\'envoi de la demande.');
+      }
+      
     } catch (error) {
       console.error('Failed to send email:', error);
       alert('Échec de l\'envoi de la demande.');

@@ -19,15 +19,15 @@ const sendEmail = async (req, res) => {
         to: process.env.USER_EMAIL,
         subject: 'Nouvelle demande de réservation',
         text: `Détails de la réservation:
-                Nom: ${nom}
-                Prénom: ${prenom}
-                Email: ${email}
-                Téléphone: ${telephone}
-                Date d'arrivée: ${dateArrivee}
-                Date de départ: ${dateDepart}
-                Heure de départ: ${heureDepart}
-                Nombre de personnes: ${nbPersonnes}
-                Commentaires: ${commentaires}`
+        Nom: ${nom}
+        Prénom: ${prenom}
+        Email: ${email}
+        Téléphone: ${telephone}
+        Date d'arrivée: ${dateArrivee}
+        Date de départ: ${dateDepart}
+        Heure de départ: ${heureDepart}
+        Nombre de personnes: ${nbPersonnes}
+        Commentaires: ${commentaires}`
     };
 
 
