@@ -44,7 +44,7 @@ const Reservation = ({language}) => {
         alert('Votre demande de réservation a été envoyée avec succès !');
       } else {
         console.error('Failed to send email:', response.status, response.statusText);
-        alert('Échec de l\'envoi de la demande.');
+        alert(response);
       }
       
     } catch (error) {
