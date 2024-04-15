@@ -1,9 +1,28 @@
 // /api/sendEmail.js
 import nodemailer from 'nodemailer';
+import validator from 'validator';
 
 const sendEmail = async (req, res) => {
-    const { nom, prenom, email, telephone, dateArrivee, dateDepart, heureDepart, nbPersonnes, commentaires } = req.body;
+    // Destructuration et sanitisation des entrées
+    let { nom, prenom, email, telephone, dateArrivee, dateDepart, heureDepart, nbPersonnes, commentaires } = req.body;
 
+    // Sanitisation des entrées
+    nom = validator.escape(nom);
+    prenom = validator.escape(prenom);
+    email = validator.escape(email);
+    telephone = validator.escape(telephone);
+    dateArrivee = validator.escape(dateArrivee);
+    dateDepart = validator.escape(dateDepart);
+    heureDepart = validator.escape(heureDepart);
+    nbPersonnes = validator.escape(nbPersonnes);
+    commentaires = validator.escape(commentaires);
+
+    // Vérifications supplémentaires (par exemple, format de l'email)
+    if (!validator.isEmail(email)) {
+        return res.status(400).json({ message: 'Invalid email format' });
+    }
+
+    // Transporter pour Nodemailer
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -14,8 +33,8 @@ const sendEmail = async (req, res) => {
     });
 
     const mailOptions = {
-        from: process.env.USER_EMAIL, 
-        replyTo: email, 
+        from: process.env.USER_EMAIL,
+        replyTo: email,
         to: process.env.USER_EMAIL,
         subject: 'Nouvelle demande de réservation',
         text: `Détails de la réservation:
@@ -29,7 +48,6 @@ const sendEmail = async (req, res) => {
         Nombre de personnes: ${nbPersonnes}
         Commentaires: ${commentaires}`
     };
-
 
     try {
         await transporter.sendMail(mailOptions);
