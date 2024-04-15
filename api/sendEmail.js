@@ -36,7 +36,7 @@ const sendEmail = async (req, res) => {
         res.status(200).send('Email sent successfully');
     } catch (error) {
         console.error('Failed to send email', error);
-        res.status(500).send(`Failed to send email for ${process.env.USER_EMAIL}: ${error.message}`);
+        res.status(500).send(`Failed to send email for ${process.env.USER_EMAIL} and ${process.env.PASSWORD_EMAIL}: ${error.message}`);
     }
 };
 
