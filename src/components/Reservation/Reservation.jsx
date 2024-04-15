@@ -49,7 +49,7 @@ const Reservation = ({language}) => {
       
     } catch (error) {
       console.error('Failed to send email:', error);
-      alert('Échec de l\'envoi de la demande.');
+      alert(error);
     }
   };
   
