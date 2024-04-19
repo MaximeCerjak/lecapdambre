@@ -33,7 +33,7 @@ const Header = ({language, setLanguage}) => {
           EN
         </button>
       </div>
-      <h1>Le Cap d'Ambre</h1>
+      <h1>Hôtel Le Cap d'Ambre</h1>
       <nav className='navBar'>
         <Link to="gallery" smooth={true} duration={500}>{language === "fr" ? "Accueil" : "Home"}</Link>
         <Link to="nosServices" smooth={true} duration={500}>Services</Link>
