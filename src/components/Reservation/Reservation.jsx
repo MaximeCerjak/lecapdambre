@@ -15,20 +15,45 @@ const Reservation = ({language}) => {
   const [nbPersonnes, setNbPersonnes] = useState('');
   const [commentaires, setCommentaires] = useState('');
 
-  const data = {
-    nom,
-    prenom,
-    email,
-    telephone,
-    dateArrivee,
-    dateDepart,
-    heureDepart,
-    nbPersonnes,
-    commentaires,
+
+  // Validation de la date d'arrivée
+  const isValidDateArrivee = () => {
+    const now = new Date();
+    const arrivee = new Date(dateArrivee);
+    const hoursDiff = (arrivee.getTime() - now.getTime()) / (1000 * 60 * 60);
+    return hoursDiff >= 48;
+  };
+
+  // Validation de l'email ou du téléphone
+  const isValidContactInfo = () => {
+    return email.trim() !== '' || telephone.trim() !== '';
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!isValidDateArrivee()) {
+      alert("La date d'arrivée doit être au moins 48 heures après la date actuelle.");
+      return;
+    }
+
+    if (!isValidContactInfo()) {
+      alert("Veuillez fournir au moins une adresse email ou un numéro de téléphone.");
+      return;
+    }
+
+    const data = {
+      nom,
+      prenom,
+      email,
+      telephone,
+      dateArrivee,
+      dateDepart,
+      heureDepart,
+      nbPersonnes,
+      commentaires,
+    };
+
     try {
       const response = await fetch('https://lecapdambre.vercel.app/api/sendEmail', {
         method: 'POST',
@@ -37,17 +62,22 @@ const Reservation = ({language}) => {
         },
         body: JSON.stringify(data),
       });
-
-      if (!response.ok) throw new Error('Something went wrong');
-      const result = await response.json();
-      console.log('Email sent successfully:', result);
-      alert('Votre demande de réservation a été envoyée avec succès !');
+  
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Email sent successfully:', result);
+        alert('Votre demande de réservation a été envoyée avec succès !');
+      } else {
+        const errorResponse = await response.text(); 
+        console.error('Failed to send email:', response.status, errorResponse);
+        alert(`Erreur lors de l'envoi de l'email: ${errorResponse}`);
+      }
+      
     } catch (error) {
       console.error('Failed to send email:', error);
-      alert('Échec de l\'envoi de la demande.');
+      alert(`Erreur lors de l'envoi de l'email: ${error}`);
     }
-  };
-  
+  };  
 
   if(language === "fr") {
     return (
