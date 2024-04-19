@@ -5,7 +5,9 @@ import CH4recto from '../images/roompics/CH 4 R.jpg';
 import CH4verso from '../images/roompics/CH 4 V.jpg';
 import CH5 from '../images/roompics/CH 5.jpg';
 import CH6 from '../images/roompics/CH 6.jpg';
+import CH7 from '../images/roompics/CH 7.jpg';
 import CH8 from '../images/roompics/CH 8.jpg';
+import CH9 from '../images/roompics/CH 9.jpg';
 import CH10ks from '../images/roompics/CH 10 k-size.jpg';
 import CH10salon from '../images/roompics/CH 10 Sal.jpg';
 import CH10single from '../images/roompics/CH 10 singlebed.jpg';
@@ -77,9 +79,27 @@ const roompic = [
         terasse_alt: null,
     },
     {
+        id: 7,
+        room_pic: [CH7],
+        room_alt: ["Chambre 7"],
+        sdb_pic: null,
+        sdb_alt: null,
+        terasse_pic: null,
+        terasse_alt: null,
+    },
+    {
         id: 8,
         room_pic: [CH8],
         room_alt: ["Chambre 8"],
+        sdb_pic: null,
+        sdb_alt: null,
+        terasse_pic: null,
+        terasse_alt: null,
+    },
+    {
+        id: 9,
+        room_pic: [CH9],
+        room_alt: ["Chambre 9"],
         sdb_pic: null,
         sdb_alt: null,
         terasse_pic: null,

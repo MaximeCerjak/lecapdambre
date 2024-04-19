@@ -7,7 +7,6 @@ import facade from '../../images/icons/facade.svg';
 import {translations} from '../../data/const';
 import './RoomCard.css';
 
-
 const renderRoomCard = (language, room, roomImages) => {
   const formatBedInfo = (bedStr, language) => {
     const bedCounts = { single: 0, double: 0 };
@@ -19,9 +18,16 @@ const renderRoomCard = (language, room, roomImages) => {
         bedCounts.double += parseInt(count, 10);
       }
     });
-  
+
     const t = translations[language];
-    return `${bedCounts.single} ${t.singleBed} et ${bedCounts.double} ${t.doubleBed}`;
+    let bedInfo = [];
+    if (bedCounts.single > 0) {
+      bedInfo.push(`${bedCounts.single} ${t.singleBed}`);
+    }
+    if (bedCounts.double > 0) {
+      bedInfo.push(`${bedCounts.double} ${t.doubleBed}`);
+    }
+    return bedInfo.join(' et ');
   };
 
   const t = translations[language];
