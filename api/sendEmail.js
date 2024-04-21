@@ -35,7 +35,7 @@ const sendEmail = async (req, res) => {
     const mailOptions = {
         from: process.env.USER_EMAIL,
         replyTo: email,
-        to: process.env.USER_EMAIL,
+        to: 'emachma@aol.com',
         subject: 'Nouvelle demande de réservation',
         text: `Détails de la réservation:
         Nom: ${nom}

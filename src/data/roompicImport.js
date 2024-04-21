@@ -13,6 +13,8 @@ import CH10salon from '../images/roompics/CH 10 Sal.jpg';
 import CH10single from '../images/roompics/CH 10 singlebed.jpg';
 import CH11 from '../images/roompics/CH 11.jpg';
 import CH12 from '../images/roompics/CH 12.jpg';
+import CH23 from '../images/roompics/CH 23.jpg';
+import CH24 from '../images/roompics/CH 24.jpg';
 import SB1 from '../images/roompics/SB 1.jpg';
 import SB3 from '../images/roompics/SB 3.jpg';
 import SB10 from '../images/roompics/SB 10.jpg';
@@ -132,6 +134,24 @@ const roompic = [
         terasse_pic: T12,
         terasse_alt: "Terasse 12",
     },
+    {
+        id: 23,
+        room_pic: [CH23],
+        room_alt: ["Chambre 23"],
+        sdb_pic: null,
+        sdb_alt: null,
+        terasse_pic: null,
+        terasse_alt: null,
+    },
+    {
+        id: 24,
+        room_pic: [CH24],
+        room_alt: ["Chambre 24"],
+        sdb_pic: null,
+        sdb_alt: null,
+        terasse_pic: null,
+        terasse_alt: null,
+    }
 ];
 
 export default roompic;
