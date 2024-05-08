@@ -14,7 +14,7 @@ import CH10single from '../images/roompics/CH 10 singlebed.jpg';
 import CH11 from '../images/roompics/CH 11.jpg';
 import CH12 from '../images/roompics/CH 12.jpg';
 import CH23 from '../images/roompics/CH 23.jpg';
-import CH24 from '../images/roompics/CH 24.jpg';
+import CH24 from '../images/roompics/CH 24-2.jpg';
 import SB1 from '../images/roompics/SB 1.jpg';
 import SB3 from '../images/roompics/SB 3.jpg';
 import SB10 from '../images/roompics/SB 10.jpg';
