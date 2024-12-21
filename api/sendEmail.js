@@ -2,7 +2,25 @@
 import nodemailer from 'nodemailer';
 import validator from 'validator';
 
+function setCorsHeaders(res) {
+    // Autorisez seulement votre domaine, ou * pour autoriser tout
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.hotelcapdambre.fr');
+    // Vous pouvez mettre '*' si vous voulez autoriser plusieurs origines
+    // res.setHeader('Access-Control-Allow-Origin', '*');
+  
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+}
+
 const sendEmail = async (req, res) => {
+    // Autorisez les requêtes provenant de votre domaine
+    setCorsHeaders(res);
+
+    // Gérer la requête OPTIONS (pré-vol)
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
     // Destructuration et sanitisation des entrées
     let { nom, prenom, email, telephone, dateArrivee, dateDepart, heureDepart, nbPersonnes, commentaires } = req.body;
 
