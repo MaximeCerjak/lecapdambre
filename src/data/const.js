@@ -3,7 +3,7 @@ export const animal = 9;
 export const dej = 9.5;
 export const taxe = 0.99;
 
-export const closeDate = ["08/01-08/02"]
+export const closeDate = []
 export const BS = ["10/03-04/04", "05/05-06/05", "13/05-16/05", "21/05-30/05", "01/10-17/10", "04/11-19/12", "06/01-08/02"];
 export const MS = ["09/02-09/03", "05/04-04/05", "01/06-30/06", "01/09-30/09","18/10-03/11", "20/12-05/01"];
 export const HS = ["07/05-12/05", "17/05-20/05", "01/07-30/08"];
