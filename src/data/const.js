@@ -1,6 +1,6 @@
 export const babybed = 8;
 export const animal = 9;
-export const dej = 9.5;
+export const dej = 12;
 export const taxe = 0.99;
 
 export const closeDate = []
